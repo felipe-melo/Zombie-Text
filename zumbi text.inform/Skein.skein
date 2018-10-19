@@ -1,46 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Skein rootNode="node-0x190b330" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+<Skein rootNode="node-0x1aa8ee0" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Inform 7</generator>
-  <activeNode nodeId="node-0x7f42c01da120"/>
-  <item nodeId="node-0x190b330">
+  <activeNode nodeId="node-0x1aa8ee0"/>
+  <item nodeId="node-0x1aa8ee0">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">
 
 
+introduction to be written
 zumbi text
 An Interactive Fiction by Felipe Melo
-Release 1 / Serial number 181016 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD
+Release 1 / Serial number 181019 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD
 
 Porch
+porch description
+
 You can see Main door here.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
-    <changed>NO</changed>
+    <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x190bdb0"/>
-      <child nodeId="node-0x7f42a40f0940"/>
+      <child nodeId="node-0x214f120"/>
+      <child nodeId="node-0x1e14ba0"/>
     </children>
   </item>
-  <item nodeId="node-0x190bdb0">
+  <item nodeId="node-0x214f120">
     <command xml:space="preserve">open main door</command>
     <result xml:space="preserve">You open Main door.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x190bf30"/>
-      <child nodeId="node-0x7f42a40f0f40"/>
+      <child nodeId="node-0x214f2a0"/>
+      <child nodeId="node-0x214f8a0"/>
     </children>
   </item>
-  <item nodeId="node-0x190bf30">
+  <item nodeId="node-0x214f2a0">
     <command xml:space="preserve">look</command>
     <result xml:space="preserve">Porch
 You can see Main door here.
@@ -52,10 +55,10 @@ You can see Main door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40f01c0"/>
+      <child nodeId="node-0x214f420"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40f01c0">
+  <item nodeId="node-0x214f420">
     <command xml:space="preserve">enter main door</command>
     <result xml:space="preserve">
 Reception
@@ -68,10 +71,10 @@ You can see Main door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40f0340"/>
+      <child nodeId="node-0x214f5a0"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40f0340">
+  <item nodeId="node-0x214f5a0">
     <command xml:space="preserve">look</command>
     <result xml:space="preserve">Reception
 You can see Main door here.
@@ -83,10 +86,10 @@ You can see Main door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40f04c0"/>
+      <child nodeId="node-0x214f720"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40f04c0">
+  <item nodeId="node-0x214f720">
     <command xml:space="preserve">up</command>
     <result xml:space="preserve">You can&apos;t go that way.
 
@@ -97,25 +100,28 @@ You can see Main door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x7f42a40f0f40">
+  <item nodeId="node-0x214f8a0">
     <command xml:space="preserve">enter main door</command>
     <result xml:space="preserve">
 Reception
-You can see Main door and Hall door 1 here.
+reception description
+
+You can see Main door, Hall door 1, Crowbar, and Cabinet here.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40cd130"/>
-      <child nodeId="node-0x7f42a40cda30"/>
-      <child nodeId="node-0x7f42c00d71a0"/>
+      <child nodeId="node-0x214fa20"/>
+      <child nodeId="node-0x1de7300"/>
+      <child nodeId="node-0x1de7a80"/>
+      <child nodeId="node-0x1e53d50"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40cd130">
+  <item nodeId="node-0x214fa20">
     <command xml:space="preserve">open Hall door</command>
     <result xml:space="preserve">You open Hall door.
 
@@ -126,10 +132,10 @@ You can see Main door and Hall door 1 here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40cd2b0"/>
+      <child nodeId="node-0x214fba0"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40cd2b0">
+  <item nodeId="node-0x214fba0">
     <command xml:space="preserve">enter hall door</command>
     <result xml:space="preserve">
 Hall 1
@@ -142,10 +148,10 @@ You can see Hall door and Rest door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40cd430"/>
+      <child nodeId="node-0x214fd20"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40cd430">
+  <item nodeId="node-0x214fd20">
     <command xml:space="preserve">open rest door</command>
     <result xml:space="preserve">You open Rest door.
 
@@ -156,10 +162,10 @@ You can see Hall door and Rest door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40cd5b0"/>
+      <child nodeId="node-0x214fea0"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40cd5b0">
+  <item nodeId="node-0x214fea0">
     <command xml:space="preserve">enter rest door</command>
     <result xml:space="preserve">
 Hall 1
@@ -172,10 +178,10 @@ You can see Hall door and Rest door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40cd730"/>
+      <child nodeId="node-0x1de7180"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40cd730">
+  <item nodeId="node-0x1de7180">
     <command xml:space="preserve">enter rest door</command>
     <result xml:space="preserve">
 Hall 1
@@ -188,7 +194,7 @@ You can see Hall door and Rest door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x7f42a40cda30">
+  <item nodeId="node-0x1de7300">
     <command xml:space="preserve">open hall door</command>
     <result xml:space="preserve">You open Hall door.
 
@@ -199,10 +205,10 @@ You can see Hall door and Rest door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40cd8b0"/>
+      <child nodeId="node-0x1de7480"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40cd8b0">
+  <item nodeId="node-0x1de7480">
     <command xml:space="preserve">enter hall door</command>
     <result xml:space="preserve">
 Hall 1
@@ -215,10 +221,10 @@ You can see Hall door and Rest door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40cdbb0"/>
+      <child nodeId="node-0x1de7600"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40cdbb0">
+  <item nodeId="node-0x1de7600">
     <command xml:space="preserve">open rest door</command>
     <result xml:space="preserve">You open Rest door.
 
@@ -229,10 +235,10 @@ You can see Hall door and Rest door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40cdd30"/>
+      <child nodeId="node-0x1de7780"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40cdd30">
+  <item nodeId="node-0x1de7780">
     <command xml:space="preserve">enter rest door</command>
     <result xml:space="preserve">
 Rest Room
@@ -245,10 +251,10 @@ You can see Rest door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40cdeb0"/>
+      <child nodeId="node-0x1de7900"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40cdeb0">
+  <item nodeId="node-0x1de7900">
     <command xml:space="preserve">enter rest door</command>
     <result xml:space="preserve">
 Hall 1
@@ -261,21 +267,21 @@ You can see Rest door and Hall door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x7f42c00d71a0">
+  <item nodeId="node-0x1de7a80">
     <command xml:space="preserve">open hall door 1</command>
     <result xml:space="preserve">You open Hall door 1.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42c00d7320"/>
+      <child nodeId="node-0x1de7c00"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42c00d7320">
+  <item nodeId="node-0x1de7c00">
     <command xml:space="preserve">enter hall door 1</command>
     <result xml:space="preserve">
 Hall 1
@@ -283,29 +289,29 @@ You can see Hall door 1, Lab door and Rest door here.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42c00d74a0"/>
+      <child nodeId="node-0x1de7d80"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42c00d74a0">
+  <item nodeId="node-0x1de7d80">
     <command xml:space="preserve">open rest door</command>
     <result xml:space="preserve">You open Rest door.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42c00d7620"/>
+      <child nodeId="node-0x1de7f00"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42c00d7620">
+  <item nodeId="node-0x1de7f00">
     <command xml:space="preserve">enter rest door</command>
     <result xml:space="preserve">
 Rest Room
@@ -313,15 +319,15 @@ You can see Rest door here.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42c00d77a0"/>
+      <child nodeId="node-0x1e14120"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42c00d77a0">
+  <item nodeId="node-0x1e14120">
     <command xml:space="preserve">enter rest door</command>
     <result xml:space="preserve">
 Hall 1
@@ -329,29 +335,29 @@ You can see Rest door, Hall door 1 and Lab door here.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42c00d7920"/>
+      <child nodeId="node-0x1e142a0"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42c00d7920">
+  <item nodeId="node-0x1e142a0">
     <command xml:space="preserve">open lab door</command>
     <result xml:space="preserve">You open Lab door.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42c00d7aa0"/>
+      <child nodeId="node-0x1e14420"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42c00d7aa0">
+  <item nodeId="node-0x1e14420">
     <command xml:space="preserve">enter lab</command>
     <result xml:space="preserve">
 Lab
@@ -359,29 +365,29 @@ You can see Lab door and Hall door 2 here.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42c00d7c20"/>
+      <child nodeId="node-0x1e145a0"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42c00d7c20">
+  <item nodeId="node-0x1e145a0">
     <command xml:space="preserve">open hall door 2</command>
     <result xml:space="preserve">You open Hall door 2.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42c00d7da0"/>
+      <child nodeId="node-0x1e14720"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42c00d7da0">
+  <item nodeId="node-0x1e14720">
     <command xml:space="preserve">enter hall 2</command>
     <result xml:space="preserve">
 Hall 2
@@ -389,29 +395,29 @@ You can see Hall door 2 and Refectory door here.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42c00d7f20"/>
+      <child nodeId="node-0x1e148a0"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42c00d7f20">
+  <item nodeId="node-0x1e148a0">
     <command xml:space="preserve">open refectory door</command>
     <result xml:space="preserve">You open Refectory door.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42c01da120"/>
+      <child nodeId="node-0x1e14a20"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42c01da120">
+  <item nodeId="node-0x1e14a20">
     <command xml:space="preserve">enter refectory</command>
     <result xml:space="preserve">
 Hall 2
@@ -419,12 +425,52 @@ You can see Hall door 2 and Refectory door here.
 
 &gt;</result>
     <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
+    <played>NO</played>
     <changed>YES</changed>
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
   </item>
-  <item nodeId="node-0x7f42a40f0940">
+  <item nodeId="node-0x1e53d50">
+    <command xml:space="preserve">take Crowbar</command>
+    <result xml:space="preserve">Taken.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x1e53ed0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x1e53ed0">
+    <command xml:space="preserve">invetory</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognize.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f69ac101190"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f69ac101190">
+    <command xml:space="preserve">inventory</command>
+    <result xml:space="preserve">You are carrying:
+  Crowbar
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x1e14ba0">
     <command xml:space="preserve">enter main door</command>
     <result xml:space="preserve">(first opening Main door)
 
@@ -438,10 +484,10 @@ You can see Main door and Enter door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40f07c0"/>
+      <child nodeId="node-0x1e14d20"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40f07c0">
+  <item nodeId="node-0x1e14d20">
     <command xml:space="preserve">enter main door</command>
     <result xml:space="preserve">
 Porch
@@ -454,10 +500,10 @@ You can see Main door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40f0640"/>
+      <child nodeId="node-0x1e14ea0"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40f0640">
+  <item nodeId="node-0x1e14ea0">
     <command xml:space="preserve">open Main door</command>
     <result xml:space="preserve">That&apos;s already open.
 
@@ -468,10 +514,10 @@ You can see Main door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40f0ac0"/>
+      <child nodeId="node-0x1e53150"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40f0ac0">
+  <item nodeId="node-0x1e53150">
     <command xml:space="preserve">enter main door</command>
     <result xml:space="preserve">
 Reception
@@ -484,10 +530,10 @@ You can see Main door and Enter door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40f0c40"/>
+      <child nodeId="node-0x1e532d0"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40f0c40">
+  <item nodeId="node-0x1e532d0">
     <command xml:space="preserve">open Enter door</command>
     <result xml:space="preserve">You open Enter door.
 
@@ -498,10 +544,10 @@ You can see Main door and Enter door here.
     <temporary score="0">YES</temporary>
     <annotation xml:space="preserve"></annotation>
     <children>
-      <child nodeId="node-0x7f42a40f0dc0"/>
+      <child nodeId="node-0x1e53450"/>
     </children>
   </item>
-  <item nodeId="node-0x7f42a40f0dc0">
+  <item nodeId="node-0x1e53450">
     <command xml:space="preserve">enter Enter door</command>
     <result xml:space="preserve">
 Hall 1

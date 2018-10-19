@@ -3,36 +3,36 @@
 <plist version="1.0"><dict>
     <key>Application Version</key><string>6M62</string>
     <key>0</key><dict>
-        <key>Filename</key><string>/home/cooper/Desenvolvimento/ufrj/Projeto de Jogos/zumbi_text/zumbi text.inform/Source/story.ni</string>
+        <key>Filename</key><string>/home/cooper/Desenvolvimento/ufrj/Projeto de Jogos/Zumbi-Text/zumbi text.inform/Source/story.ni</string>
         <key>Line</key><integer>1</integer>
         <key>Title</key><string>"zumbi text" by "Felipe Melo"</string>
         <key>Level</key><integer>0</integer>
         <key>Indentation</key><integer>0</integer>
     </dict>
     <key>1</key><dict>
-        <key>Filename</key><string>/home/cooper/Desenvolvimento/ufrj/Projeto de Jogos/zumbi_text/zumbi text.inform/Source/story.ni</string>
-        <key>Line</key><integer>3</integer>
+        <key>Filename</key><string>/home/cooper/Desenvolvimento/ufrj/Projeto de Jogos/Zumbi-Text/zumbi text.inform/Source/story.ni</string>
+        <key>Line</key><integer>5</integer>
         <key>Title</key><string>Chapter 2 Geography</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>2</key><dict>
-        <key>Filename</key><string>/home/cooper/Desenvolvimento/ufrj/Projeto de Jogos/zumbi_text/zumbi text.inform/Source/story.ni</string>
-        <key>Line</key><integer>5</integer>
+        <key>Filename</key><string>/home/cooper/Desenvolvimento/ufrj/Projeto de Jogos/Zumbi-Text/zumbi text.inform/Source/story.ni</string>
+        <key>Line</key><integer>7</integer>
         <key>Title</key><string>Section 2.1 The Build</string>
         <key>Level</key><integer>5</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>3</key><dict>
-        <key>Filename</key><string>/home/cooper/Desenvolvimento/ufrj/Projeto de Jogos/zumbi_text/zumbi text.inform/Source/story.ni</string>
-        <key>Line</key><integer>22</integer>
+        <key>Filename</key><string>/home/cooper/Desenvolvimento/ufrj/Projeto de Jogos/Zumbi-Text/zumbi text.inform/Source/story.ni</string>
+        <key>Line</key><integer>24</integer>
         <key>Title</key><string>Chapter 3 Things</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
     </dict>
     <key>4</key><dict>
-        <key>Filename</key><string>/home/cooper/Desenvolvimento/ufrj/Projeto de Jogos/zumbi_text/zumbi text.inform/Source/story.ni</string>
-        <key>Line</key><integer>27</integer>
+        <key>Filename</key><string>/home/cooper/Desenvolvimento/ufrj/Projeto de Jogos/Zumbi-Text/zumbi text.inform/Source/story.ni</string>
+        <key>Line</key><integer>37</integer>
         <key>Title</key><string>Chapter 4 What Happens when entering</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
