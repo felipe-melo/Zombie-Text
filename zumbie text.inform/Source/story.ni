@@ -102,4 +102,11 @@ Understand "talk to [someone]" or “converse with [someone]” as talking to.
 
 Check talking to: say "[The noun] doesn't reply."
 
-Instead of talking to Charles Babbage:say "He does not respond, he seems to be dead..".
+Instead of talking to Charles Babbage:say "He does not respond, he seems to be dead.".
+
+Instead of talking to Ada Lovelace:say "'Você está bem? Foi mordida? Sabe onde está cura?' você diz afobado.[paragraph break]'Estou bem, pode ficar tranquilo', ela responde[paragraph break] 'E sei bem onde está a cura' ela diz com un lindo sorriso em seu rosto"
+
+
+Instead of asking Ada Lovelace about "cure":
+say "'Onde ela está?'"
+
