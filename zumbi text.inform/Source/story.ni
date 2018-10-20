@@ -25,15 +25,24 @@ The matching key of the Hall door 1 is The Crowbar.
 The matching key of the Rest door is Green key.
 The matching key of the Refectory door is Red key.
 
+instead of opening Rest door:
+	if the Zombie 1 is dead:
+		continue the action;
+	otherwise:
+		say "The zombie tries to attack you!"
+
 Chapter 2 Characters
 
 Player is in Porch.
 
 Ada Lovelace is a woman in the Refectory. The description is "Ada description".
 
-Charles Babbage is man in the Rest room. Charles Babbage carries the Gun and Master key. "You can see a man lying in the floor, his name is Charles Babbage, he seems to be dead, in his badge says that he was FioCruz'd director, apparently he shot himself in the head with a gun because he was bitten by a zombie". The description is "Charles Babbage is carrying a gun and a key". 
+Charles Babbage is man in the Rest room. Charles Babbage carries the Gun and Master key. "You can see a man lying in the floor, his name is Charles Babbage, he seems to be dead, in his badge says that he was FioCruz's director, apparently he shot himself in the head with a gun because he was bitten by a zombie". The description is "Charles Babbage is carrying a gun and a key". 
 
 Zombie 1 is a man in the Entry Hall. "". The  description is "". Understand "dead", "living dead", "undead", "zombie", and "walking dead" as zombie.
+Zombie 1 has a number called is-alive. is-alive of the Zombie 1 is usually 1.
+
+Definition: The zombie 1 is dead if his is-alive is less than 1.
 
 Chapter 3 Things
 
@@ -54,11 +63,18 @@ Attacking it with is an action applying to two things. Understand "attack [somet
 Check attacking it with:
 	if the second noun is not carried by the player:
 		say "You're not holding [the second noun]." instead.
-		
+
+Instead of attacking the zombie 1:
+	say "You have to attack the zombie with something.".
+	
+Instead of opening Hall door 1:
+	say "The Hall door 1 is locked by a chain.".
+
 Instead of attacking the zombie 1 with the crowbar:
 	let X be a random number from 1 to 5;
 	if X is 1:
 		say "You hit the zombie with the crowbar right in the head. The crowbar gets stuck in the head of the zombie!";
+		now is-alive is 0;
 		remove the zombie 1 from play;
 		now the crowbar is in the location;
 	otherwise if X is 2:
