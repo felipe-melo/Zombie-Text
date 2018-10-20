@@ -68,7 +68,10 @@ Instead of attacking the zombie 1:
 	say "You have to attack the zombie with something.".
 	
 Instead of opening Hall door 1:
-	say "The Hall door 1 is locked by a chain.".
+	if Hall door 1 is locked:
+		say "The Hall door 1 is locked by a chain.";
+	otherwise:
+		continue the action
 
 Instead of attacking the zombie 1 with the crowbar:
 	let X be a random number from 1 to 5;
