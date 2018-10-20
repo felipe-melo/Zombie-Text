@@ -104,9 +104,9 @@ Check talking to: say "[The noun] doesn't reply."
 
 Instead of talking to Charles Babbage:say "He does not respond, he seems to be dead.".
 
-Instead of talking to Ada Lovelace:say "'Você está bem? Foi mordida? Sabe onde está cura?' você diz afobado.[paragraph break]'Estou bem, pode ficar tranquilo', ela responde[paragraph break] 'E sei bem onde está a cura' ela diz com un lindo sorriso em seu rosto"
+Instead of talking to Ada Lovelace:say "'Are you alright? Was it bitten? Do you know where the cure is? ' you say flustered.[paragraph break]'Im fine, you can rest easy,' she responds.[paragraph break] 'And I know where the cure is' she says with a beautiful smile on her face .".
 
 
 Instead of asking Ada Lovelace about "cure":
-say "'Onde ela está?'"
+say "''The cure is in the laboratory in a closed chamber' [paragraph break] 'To access it you need a master key that is with the director of FioCruz's and then you need my digital' she informs"
 
