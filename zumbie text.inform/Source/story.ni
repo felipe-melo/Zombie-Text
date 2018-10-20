@@ -42,7 +42,15 @@ Charles Babbage is man in the Rest room. Charles Babbage carries the Gun and Mas
 Zombie 1 is a man in the Entry Hall. "". The  description is "". Understand "dead", "living dead", "undead", "zombie", and "walking dead" as zombie.
 Zombie 1 has a number called is-alive. is-alive of the Zombie 1 is usually 1.
 
+Zombie 2 is woman in the Back Hall. "". The description is "". Understand "dead", "living dead", "undead", "zombie" and "walking dead" as zombie.
+Zombie 2 has a number called 2-is-alive. 2-is-alive of the Zombie 2 is usually 1.
+
+Zombie 3 is man in the Back Hall. "". The description is "". Understand "dead", "living dead", "undead", "zombie" and "walking dead" as zombie.
+Zombie 3 has a number called 3-is-alive. 3-is-alive of the Zombie 3 is usually 1.
+
 Definition: The zombie 1 is dead if his is-alive is less than 1.
+Definition: The zombie 2 is dead if his 2-is-alive is less than 1.
+Definition: The zombie 3 is dead if his 3-is-alive is less than 1.
 
 Chapter 3 Things
 
@@ -57,12 +65,19 @@ Red key, Blue key, Yellow key, Green key are in Cabinet.
 Master Key is a thing.
 
 Gun is a thing.
+Gun has a number called has-bullet. has-bullet of the Gun is usually 1.
+
+Definition: The gun is empty if his has-bullet is less than 1.
 
 Attacking it with is an action applying to two things. Understand "attack [something] with [something]" and "hit [something] with [something]" as attacking it with.
 
 Check attacking it with:
 	if the second noun is not carried by the player:
 		say "You're not holding [the second noun]." instead.
+		
+Instead of taking the Gun:
+	say "You took the gun from Charles Babbage's";
+	now player carries the Gun;
 
 Instead of attacking the zombie 1:
 	say "You have to attack the zombie with something.".
@@ -85,6 +100,58 @@ Instead of attacking the zombie 1 with the crowbar:
 		end the story finally;
 	otherwise:
 		say "You missed the blow but still managed to pull away to try again."
+
+[***Mecânicas do Zumbi 2***]
+[Jogador morre caso ataque o zumbi com o pé de cabra ao invés da arma.]
+Instead of attacking the zombie 2 with the crowbar:
+	if Zombie 3 is not dead:
+		say "Zombie 3 just attacked you from behind.";
+		end the story finally;
+	otherwise:
+		say "You killed the zombie 2";
+		now 2-is-alive is 0;
+		remove the zombie 2 from play;
+
+[Jogador tenta matar o zumbi com a arma, que só tem uma bala. Se ele errar ou estiver sem balas, ele morre.]
+Instead of attacking the zombie 2 with the gun:
+	let X be a random number from 1 to 10;
+	if gun is empty:
+		say "You are out of bullets and you have been attacked.";
+		end the story finally;
+	otherwise if X is greater than 3:
+		say "You shot the zombie and now you are out of gun";
+		now 2-is-alive is 0;
+		now has-bullet of the Gun is 0;
+		remove the zombie 2 from play;
+	otherwise:
+		say "You missed the shot and now you're out of bullets. The zombies attack you.";
+		end the story finally;
+
+[***Mecânicas do Zumbi 3***]
+[Jogador morre caso ataque o zumbi com o pé de cabra ao invés da arma.]
+Instead of attacking the zombie 3 with the crowbar:
+	if Zombie 2 is not dead:
+		say "Zombie 2 just attacked you from behind.";
+		end the story finally;
+	otherwise:
+		say "You killed zombie 3";
+		now 3-is-alive is 0;
+		remove the zombie 3 from play;
+
+[Jogador tenta matar o zumbi com a arma, que só tem uma bala. Se ele errar ou estiver sem balas, ele morre.]
+Instead of attacking the zombie 3 with the gun:
+	let X be a random number from 1 to 10;
+	if gun is empty:
+		say "You are out of bullets and you have been attacked.";
+		end the story finally;
+	otherwise if X is greater than 3:
+		say "You shot the zombie and now you are out of gun";
+		now 3-is-alive is 0;
+		now has-bullet of the Gun is 0;
+		remove the zombie 3 from play;
+	otherwise:
+		say "You missed the shot and now you're out of bullets. The zombies attack you.";
+		end the story finally;
 
 Chapter 4 What Happens when entering
 
