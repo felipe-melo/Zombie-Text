@@ -1,4 +1,4 @@
-"zumbi text" by "Felipe Melo"
+"zombie text" by "Felipe Melo, Herbert Salazar, Thiago Damasceno e Rodolpho Rosa"
 
 Use American dialect, full-length room descriptions, and the serial comma.
 
@@ -58,6 +58,11 @@ Master Key is a thing.
 
 Gun is a thing.
 
+Safe is a container in the Lab. "You see a big strong safe, that seems to be locked". The description is "". The Safe has a number called status.
+status of Safe is usually 1. 
+
+Antidote is a thing. Antidote is in Safe.
+
 Attacking it with is an action applying to two things. Understand "attack [something] with [something]" and "hit [something] with [something]" as attacking it with.
 
 Check attacking it with:
@@ -66,21 +71,39 @@ Check attacking it with:
 
 Instead of attacking the zombie 1:
 	say "You have to attack the zombie with something.".
-	
+
+Instead of opening safe:
+	if status of Safe is 1:
+		say "The safe seems locked.";
+	otherwise if status of Safe is 2:
+		say "The safe seems to have a second security measurement, a fingerprint reader.";
+	otherwise:
+		say "The safe is open";
+		
+Instead of taking Antidote:
+	if status of safe less than 3:
+		say "you can't see the antidote";
+	otherwise:
+		continue the action;
+
 Instead of opening Hall door 1:
 	if Hall door 1 is locked:
 		say "The Hall door 1 is locked by a chain.";
 	otherwise:
 		continue the action
+		
+Instead of taking the Gun:
+	say "you took Charles Babbage's gun";
+	now player carries the Gun;
 
 Instead of attacking the zombie 1 with the crowbar:
 	let X be a random number from 1 to 5;
-	if X is 1:
+	if X is 1 or X is 2:
 		say "You hit the zombie with the crowbar right in the head. The crowbar gets stuck in the head of the zombie!";
-		now is-alive is 0;
+		now is-alive of zombie 1 is 0;
 		remove the zombie 1 from play;
 		now the crowbar is in the location;
-	otherwise if X is 2:
+	otherwise if X is 3:
 		say "You were not fast enough and the zombie attacks you.";
 		end the story finally;
 	otherwise:
