@@ -80,7 +80,7 @@ Instead of attacking the zombie 1 with the crowbar:
 		now is-alive is 0;
 		remove the zombie 1 from play;
 		now the crowbar is in the location;
-	otherwise if X is 2:
+	otherwise if X is 6:
 		say "You were not fast enough and the zombie attacks you.";
 		end the story finally;
 	otherwise:
@@ -93,3 +93,13 @@ Being Outside the Hospital begins when play begins.
 Being Outside the Hospital ends when player is in Reception.
 
 When play begins, say "introduction to be written"
+
+
+Chapter 5 Conversation
+
+Talking to is an action applying to one visible thing.
+Understand "talk to [someone]" or “converse with [someone]” as talking to.
+
+Check talking to: say "[The noun] doesn't reply."
+
+Instead of talking to Charles Babbage:say "He does not respond, he seems to be dead..".
