@@ -107,6 +107,25 @@ Instead of talking to Charles Babbage:say "He does not respond, he seems to be d
 Instead of talking to Ada Lovelace:say "'Are you alright? Was it bitten? Do you know where the cure is? ' you say flustered.[paragraph break]'Im fine, you can rest easy,' she responds.[paragraph break] 'And I know where the cure is' she says with a beautiful smile on her face .".
 
 
-Instead of asking Ada Lovelace about "cure":
+Instead of asking Ada Lovelace about " the cure":
 say "''The cure is in the laboratory in a closed chamber' [paragraph break] 'To access it you need a master key that is with the director of FioCruz's and then you need my digital' she informs"
 
+
+Stalker is a scene. 
+Stalker begins when the player in Refectory. 
+Stalker ends when player in Lab.
+
+Every turn when Stalker is happening:
+	if the location of Ada Lovelace is not the location of the player:
+		say "kk";
+		let the way be the best route from the location of Ada Lovelace to the location of the player;
+		try Ada Lovelace going the way;
+	otherwise:
+		say "'Hey, I'm bored,' Ada Lovelace says."
+
+[Every turn:
+	if the location of Ada Lovelace is not the location of the player:
+		let the way be the best route from the location of Ada Lovelace to the location of the player;
+		try Ada Lovelace going the way;]
+	[otherwise:
+		say "'Hey, I'm bored,' Ada Lovelace says. 'Let's go for a ramble.'"]
