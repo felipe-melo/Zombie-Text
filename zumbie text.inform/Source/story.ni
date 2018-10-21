@@ -1,4 +1,4 @@
-"zombie text" by "Felipe Melo, Herbert Salazar, Thiago Damasceno e Rodolpho Rosa"
+"Zombie Text" by "Felipe Melo, Herbert Salazar, Thiago Damasceno e Rodolpho Rosa"
 
 Use American dialect, full-length room descriptions, and the serial comma.
 
@@ -29,7 +29,19 @@ instead of opening Rest door:
 	if the Zombie 1 is dead:
 		continue the action;
 	otherwise:
-		say "The zombie tries to attack you!"
+		say "The zombie tries to attack you, before you get to the door!"
+		
+instead of opening Lab door:
+	if the Zombie 1 is dead:
+		continue the action;
+	otherwise:
+		say "The zombie tries to attack you, before you get to the door!"
+		
+instead of opening Refectory door:
+	if the Zombie 1 is dead:
+		continue the action;
+	otherwise:
+		say "The zombie tries to attack you, before you get to the door!"
 
 Chapter 2 Characters
 
@@ -43,14 +55,14 @@ Zombie 1 is a man in the Entry Hall. "". The  description is "". Understand "dea
 Zombie 1 has a number called is-alive. is-alive of the Zombie 1 is usually 1.
 
 Zombie 2 is woman in the Back Hall. "". The description is "". Understand "dead", "living dead", "undead", "zombie" and "walking dead" as zombie.
-Zombie 2 has a number called 2-is-alive. 2-is-alive of the Zombie 2 is usually 1.
+Zombie 2 has a number called is-alive. is-alive of the Zombie 2 is usually 1.
 
 Zombie 3 is man in the Back Hall. "". The description is "". Understand "dead", "living dead", "undead", "zombie" and "walking dead" as zombie.
-Zombie 3 has a number called 3-is-alive. 3-is-alive of the Zombie 3 is usually 1.
+Zombie 3 has a number called is-alive. is-alive of the Zombie 3 is usually 1.
 
 Definition: The zombie 1 is dead if his is-alive is less than 1.
-Definition: The zombie 2 is dead if his 2-is-alive is less than 1.
-Definition: The zombie 3 is dead if his 3-is-alive is less than 1.
+Definition: The zombie 2 is dead if his is-alive is less than 1.
+Definition: The zombie 3 is dead if his is-alive is less than 1.
 
 Chapter 3 Things
 
@@ -84,7 +96,7 @@ status of Safe is usually 1.
 
 Antidote is a thing. Antidote is in Safe.
 
-Badge is a thing. The description is "It's written: 'Charles Babbage. FioCruz's Director'. Looks like a kind of card.". Understand "card" as badge.
+Badge is a thing. The description is "It's written: 'Charles Babbage. FioCruz's Director'. Looks like a kind of card.".
 
 the Badge is in the Wallet.
 
@@ -118,6 +130,15 @@ Instead of examining the Note:
 	say "There is something wrote with a trembling letter: 'Sorry for all the things I did, Amanda. With love, Charles Babbage'";
 	now nameDiscovered of the Locker is 1;
 	
+Instead of taking the Cabinet:
+	say "it's too heavy to carry";
+	
+Instead of taking the Locker:
+	say "it's too heavy to carry";
+	
+Instead of taking the Safe:
+	say "it's too heavy to carry";
+	
 Instead of taking the Wallet:
 	say "You took the wallet from the dead man's body"; 	
 	Now player carries the wallet;
@@ -147,15 +168,14 @@ Instead of examining the Wallet:
 	There is a badge in the wallet";
 	now checked of the Wallet is 1;
 	
-Before opening the Locker:
+[Before opening the Locker:
 	if nameDiscovered of the Locker is 0:
 		try examining Locker;
 		say "'So many Lockers. Which one do I try to open?'";
 	otherwise:
 		try examining Locker;
-		say "Opening Charles Babbage's Locker";
-	
-	
+		say "Opening Charles Babbage's Locker";]
+
 Instead unlocking the Locker with badge:
 	if nameDiscovered of the Locker is 0:
 		say "'So many Lockers. Which one do I try to open?'";
@@ -164,13 +184,18 @@ Instead unlocking the Locker with badge:
 		now Locker is open;	
 	otherwise:
 		say "You need some kind of card to open it.";
-		
-	
+
 Instead of taking the bullet:
 	now has-bullet of the Gun is 1;
 	say "You put the bullet in the gun and now it's charged";
 
 Instead of attacking the zombie 1:
+	say "You have to attack the zombie with something.".
+
+Instead of attacking the zombie 2:
+	say "You have to attack the zombie with something.".
+
+Instead of attacking the zombie 3:
 	say "You have to attack the zombie with something.".
 	
 Instead of opening Safe:
@@ -205,10 +230,10 @@ Instead of taking Antidote:
 
 Instead of opening Hall door 1:
 	if Hall door 1 is locked:
-		say "The Hall door 1 is locked by a chain.";
+		say "The Hall door 1 is locked with a chain.";
 	otherwise:
 		continue the action
-		
+
 Instead of taking the Gun:
 	say "you took Charles Babbage's gun";
 	now player carries the Gun;
@@ -235,7 +260,7 @@ Instead of attacking the zombie 2 with the Ax:
 		end the story finally;
 	otherwise:
 		say "You killed the zombie 2";
-		now 2-is-alive is 0;
+		now is-alive of Zombie 2 is 0;
 		remove the zombie 2 from play;
 
 [Jogador tenta matar o zumbi com a arma, que só tem uma bala. Se ele errar ou estiver sem balas, ele morre.]
@@ -246,7 +271,7 @@ Instead of attacking the zombie 2 with the gun:
 		end the story finally;
 	otherwise if X is greater than 3:
 		say "You shot the zombie and now you are out of gun";
-		now 2-is-alive is 0;
+		now is-alive of zombie 2 is 0;
 		now has-bullet of the Gun is 0;
 		remove the zombie 2 from play;
 	otherwise:
@@ -261,7 +286,7 @@ Instead of attacking the zombie 3 with the Ax:
 		end the story finally;
 	otherwise:
 		say "You killed zombie 3";
-		now 3-is-alive is 0;
+		now is-alive of zombie 3 is 0;
 		remove the zombie 3 from play;
 
 [Jogador tenta matar o zumbi com a arma, que só tem uma bala. Se ele errar ou estiver sem balas, ele morre.]
@@ -272,7 +297,7 @@ Instead of attacking the zombie 3 with the gun:
 		end the story finally;
 	otherwise if X is greater than 3:
 		say "You shot the zombie and now you are out of gun";
-		now 3-is-alive is 0;
+		now is-alive of zombie 3 is 0;
 		now has-bullet of the Gun is 0;
 		remove the zombie 3 from play;
 	otherwise:
@@ -290,13 +315,15 @@ When play begins, say "introduction to be written"
 
 Chapter 7 Conversation
 
-Instead of talking to Charles Babbage:say "He does not respond, he seems to be dead.".
+Instead of talking to Charles Babbage:
+	say "He does not respond, he seems to be dead.".
 
-Instead of talking to Ada Lovelace:say "'Are you alright? Was it bitten? Do you know where the cure is? ' you say flustered.[paragraph break]'Im fine, you can rest easy,' she responds.[paragraph break] 'And I know where the cure is' she says with a beautiful smile on her face .".
+Instead of talking to Ada Lovelace:
+	say "'Are you alright? Was it bitten? Do you know where the cure is? ' you say flustered.[paragraph break]'Im fine, you can rest easy,' she responds.[paragraph break] 'And I know where the cure is' she says with a beautiful smile on her face .".
 
 
 Instead of asking Ada Lovelace about " the cure":
-say "'The cure is in the laboratory in a closed chamber' [paragraph break] 'To access it you need a master key that is with the director of FioCruz's and then you need my digital' she informs"
+	say "'The cure is in the laboratory in a closed chamber' [paragraph break] 'To access it you need a master key that is with the director of FioCruz's and then you need my digital' she informs"
 	
 Instead of carrying Ada Lovelace: 	
 	move Ada Lovelace to the Lab; 	
