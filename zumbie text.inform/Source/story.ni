@@ -60,6 +60,11 @@ Master Key is a thing.
 
 Gun is a thing. The description is "There is no bullets".
 
+Safe is a container in the Lab. "You see a big strong safe, that seems to be locked". The description is "". The Safe has a number called status.
+status of Safe is usually 1. 
+
+Antidote is a thing. Antidote is in Safe.
+
 Badge is a thing. The description is "Charles Babbage. FioCruz's Director".
 
 the Badge is in the Wallet.
@@ -78,11 +83,6 @@ Chapter 5 Rules
 
 Instead of taking the Gun: say "You took the gun from the dead man's body";
 	Now player carries the gun;
-
-Safe is a container in the Lab. "You see a big strong safe, that seems to be locked". The description is "". The Safe has a number called status.
-status of Safe is usually 1. 
-
-Antidote is a thing. Antidote is in Safe.
 
 Instead of taking the Note:
 	say "You took the note from the dead man's body"; 	
