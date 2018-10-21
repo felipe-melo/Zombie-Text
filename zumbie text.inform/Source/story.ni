@@ -59,28 +59,36 @@ The Ax is in the Reception.
 
 Cabinet is a container in the Reception.
 
+Locker is a container in the Rest Room. Locker is closed and locked. 
+	Locker has a number called nameDiscovered. nameDiscovered of the Locker is usually 0.
+	The description is "The lockers of all employees. They seem to be digital lockers that opens with some kind of card.".
+	The matching key of the Locker is Badge.
+
+Bullet is a thing. Bullet is in Locker.
+
 Wallet is a container.
+Wallet has a number called checked. checked of the Wallet is usually 0.
 
 Red key is a thing. Blue key is a thing. Yellow key is a thing. Green key is a thing.
 Red key, Blue key, Yellow key, Green key are in Cabinet.
 
 Master Key is a thing. Understand "special key" as Master Key. The description is "It's written: 'Master Key'".
 
-Gun is a thing. The description is "There is no bullets".
+Gun is a thing.
 Gun has a number called has-bullet. has-bullet of the Gun is usually 0.
 
 Definition: The gun is empty if his has-bullet is less than 1.
 
 Safe is a container in the Lab. "You see a big strong safe, that seems to be locked". The description is "". The Safe has a number called status.
-status of Safe is usually 1.
+status of Safe is usually 1. 
 
 Antidote is a thing. Antidote is in Safe.
 
-Badge is a thing. The description is "Charles Babbage. FioCruz's Director".
+Badge is a thing. The description is "It's written: 'Charles Babbage. FioCruz's Director'. Looks like a kind of card.". Understand "card" as badge.
 
 the Badge is in the Wallet.
 
-Note is a thing. The description is "There is something wrote with a trembling letter: 'Sorry for all the things I did, Amanda. With love, Charles Babbage'".
+Note is a thing. The description is "There is something wrote with a trembling letter: 'Sorry for all the things I did, Amanda. With love, Charles Babbage'"
 
 Chapter 4 Actions
 
@@ -90,46 +98,70 @@ Check attacking it with:
 	if the second noun is not carried by the player:
 		say "You're not holding [the second noun]." instead.
 		
-Opening it with is an action applying to two things. Understand "open [something] with [something]" as opening it with.
-
-Check opening it with:
-	if the second noun is not carried by the player:
-		say "You're not holding [the second noun]." instead.
-
-Talking to is an action applying to one visible thing. Understand "talk to [someone]" or “converse with [someone]” as talking to.
-
-Check talking to: 
-	say "[The noun] doesn't reply."
-		
-Carrying is an action applying to one thing. Understand "carry [someone]" as carrying.
-		
 Chapter 5 Rules
 
 Instead of taking the Gun: say "You took the gun from the dead man's body";
 	Now player carries the gun;
 
 Instead of taking the Note:
-	say "You took the note from the dead man's body"; 	
+	say "You took the note from the dead man's body"; 
 	Now player carries the note;
-
+	
+Instead of examining the Note:
+	say "There is something wrote with a trembling letter: 'Sorry for all the things I did, Amanda. With love, Charles Babbage'";
+	now nameDiscovered of the Locker is 1;
+	
 Instead of taking the Wallet:
 	say "You took the wallet from the dead man's body"; 	
 	Now player carries the wallet;
 
+Instead of examining the Gun:
+	if has-bullet of the gun is 0:
+		say "It's written: 'Desert Eagle Naga'. There is no bullets in it.";
+	otherwise:
+		say "It's written: 'Desert Eagle Naga'. It's charged with one bullet.";
+
 Instead of taking the Badge:
-	say "You took the badge from the wallet"; 	
-	Now player carries the badge;
+	if checked of the Wallet is 0:
+		say "You can't see any such thing.";
+	otherwise:
+		try examining the Badge;
+		now nameDiscovered of the Locker is 1;
+		say "You took the badge from the wallet";
+		Now player carries the badge;
 	
 Instead of taking the Master Key:
 	say "You took the Master Key from the dead man's body"; 	
-	Now player carries the Master key;
+	Now player carries the Master Key;
 	
 Instead of examining the Wallet:
-	say "There is blood all over it. Was he bitten by a zombie?
+	say "'There is blood all over it. Was he bitten by a zombie?'
 
 	There is a badge in the wallet";
+	now checked of the Wallet is 1;
 	
-
+Before opening the Locker:
+	if nameDiscovered of the Locker is 0:
+		try examining Locker;
+		say "'So many Lockers. Which one do I try to open?'";
+	otherwise:
+		try examining Locker;
+		say "Opening Charles Babbage's Locker";
+	
+	
+Instead unlocking the Locker with badge:
+	if nameDiscovered of the Locker is 0:
+		say "'So many Lockers. Which one do I try to open?'";
+	otherwise if player is carrying the badge:
+		say "You open Charles Babbage's Locker. It's kinda messy! There is a bullet under the mess.";
+		now Locker is open;	
+	otherwise:
+		say "You need some kind of card to open it.";
+		
+	
+Instead of taking the bullet:
+	now has-bullet of the Gun is 1;
+	say "You put the bullet in the gun and now it's charged";
 
 Instead of attacking the zombie 1:
 	say "You have to attack the zombie with something.".
@@ -185,6 +217,7 @@ Instead of attacking the zombie 1 with the Ax:
 		end the story finally;
 	otherwise:
 		say "You missed the blow but still managed to pull away to try again."
+		
 
 [***Mecânicas do Zumbi 2***]
 [Jogador morre caso ataque o zumbi com o pé de cabra ao invés da arma.]
