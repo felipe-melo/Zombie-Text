@@ -98,6 +98,13 @@ Check attacking it with:
 	if the second noun is not carried by the player:
 		say "You're not holding [the second noun]." instead.
 		
+Talking to is an action applying to one visible thing. Understand "talk to [someone]" or “converse with [someone]” as talking to.
+
+Check talking to: 
+	say "[The noun] doesn't reply."
+		
+Carrying is an action applying to one thing. Understand "carry [someone]" as carrying.
+		
 Chapter 5 Rules
 
 Instead of taking the Gun: say "You took the gun from the dead man's body";
@@ -190,10 +197,11 @@ Instead of unlocking Safe with master key:
 		say "The safe is open";
 		
 Instead of taking Antidote:
-	if status of Safe less than 3:
-		say "you can't see the antidote";
+	if status of Safe is less than 3:
+		say "you can't see the antidote.";
 	otherwise:
-		continue the action;
+		say "You took the antidote, led to responsible officials and saved mankind.";
+		end the story finally;
 
 Instead of opening Hall door 1:
 	if Hall door 1 is locked:
@@ -293,3 +301,4 @@ say "'The cure is in the laboratory in a closed chamber' [paragraph break] 'To a
 Instead of carrying Ada Lovelace: 	
 	move Ada Lovelace to the Lab; 	
 	move player to the Lab;
+	
