@@ -126,15 +126,21 @@ Instead of examining the Wallet:
 
 Instead of attacking the zombie 1:
 	say "You have to attack the zombie with something.".
+	
+Instead of opening Safe:
+	if status of Safe is 2 and Ada is in the Lab:
+		now status of Safe is 3;
+		say "Ada opens the Safe with her fingerprint. The Safe is now open and you can see the antidote inside it.";
+	otherwise if status of Safe is 2 :
+		say "The safe seems to have a second security measurement, a fingerprint reader.";
+	otherwise:
+		say "The safe seems locked.";
 
 Instead of unlocking Safe with master key:
 	if player is carrying the Master key:
 		if status of Safe is 1:
 			now status of Safe is 2;
 			say "You've unlocked the Safe, but it seems to have another security measurement.";
-		otherwise if status of Safe is 2 and Ada is in the Lab:
-			now status of Safe is 3;
-			say "Ada opens the Safe with her fingerprint. The Safe is now open and you can see the antidote inside it.";
 		otherwise:
 			say "The safe seems to have a second security measurement, a fingerprint reader.";
 	otherwise if status of Safe is 1:
@@ -145,7 +151,7 @@ Instead of unlocking Safe with master key:
 		say "The safe is open";
 		
 Instead of taking Antidote:
-	if status of safe less than 3:
+	if status of Safe less than 3:
 		say "you can't see the antidote";
 	otherwise:
 		continue the action;
