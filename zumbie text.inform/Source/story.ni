@@ -37,7 +37,7 @@ Player is in Porch.
 
 Ada Lovelace is a woman in the Refectory. The description is "Ada description".
 
-Charles Babbage is man in the Rest room. Charles Babbage carries the Gun, the Wallet, the Note, and Master key. "You can see a man lying on the floor. He seems to be dead, apparently he shot himself in the head with a gun". Understand "man", "the man", "the guy", "dead man" as Charles Babbage. The description is "The man has a gun in his right hand, some kind of special key and a wallet in his pocket and a note in his left hand". 
+Charles Babbage is man in the Rest room. Charles Babbage carries the Gun, the Wallet, the Note, and Master key. "You can see a man lying on the floor. He seems to be dead. He apparently shot himself in the head with a gun". Understand "man", "the man", "the guy", "dead man" as Charles Babbage. The description is "The man has a gun in his right hand, some kind of special key, a wallet in his pocket and a note in his left hand". 
 
 Zombie 1 is a man in the Entry Hall. "". The  description is "". Understand "dead", "living dead", "undead", "zombie", and "walking dead" as zombie.
 Zombie 1 has a number called is-alive. is-alive of the Zombie 1 is usually 1.
@@ -61,7 +61,7 @@ Cabinet is a container in the Reception.
 
 Locker is a container in the Rest Room. Locker is closed and locked. 
 	Locker has a number called nameDiscovered. nameDiscovered of the Locker is usually 0.
-	The description is "The lockers of all employees. They seem to be digital lockers that opens with some kind of card.".
+	The description is "The lockers of all the employees. They seem to be digital lockers that open with some kind of card.".
 	The matching key of the Locker is Badge.
 
 Bullet is a thing. Bullet is in Locker.
@@ -79,16 +79,16 @@ Gun has a number called has-bullet. has-bullet of the Gun is usually 0.
 
 Definition: The gun is empty if his has-bullet is less than 1.
 
-Safe is a container in the Lab. "You see a big strong safe, that seems to be locked". The description is "". The Safe has a number called status.
+Safe is a container in the Lab. "You see a safe that seems to be locked". The description is "". The Safe has a number called status.
 status of Safe is usually 1. 
 
 Antidote is a thing. Antidote is in Safe.
 
-Badge is a thing. The description is "It's written: 'Charles Babbage. FioCruz's Director'. Looks like a kind of card.". Understand "card" as badge.
+Badge is a thing. The description is "It's written: 'Charles Babbage. FioCruz's Director'. It looks like a kind of card.". Understand "card" as badge.
 
 the Badge is in the Wallet.
 
-Note is a thing. The description is "There is something wrote with a trembling letter: 'Sorry for all the things I did, Amanda. With love, Charles Babbage'"
+Note is a thing. The description is "There is something written in a trembling handwriting: 'Sorry for all the things I've done, Amanda. With love, Charles Babbage.'"
 
 Chapter 4 Actions
 
@@ -115,7 +115,7 @@ Instead of taking the Note:
 	Now player carries the note;
 	
 Instead of examining the Note:
-	say "There is something wrote with a trembling letter: 'Sorry for all the things I did, Amanda. With love, Charles Babbage'";
+	say "There is something written in a trembling handwriting: 'Sorry for all the things I did, Amanda. With love, Charles Babbage'";
 	now nameDiscovered of the Locker is 1;
 	
 Instead of taking the Wallet:
@@ -178,7 +178,7 @@ Instead of opening Safe:
 		now status of Safe is 3;
 		say "Ada opens the Safe with her fingerprint. The Safe is now open and you can see the antidote inside it.";
 	otherwise if status of Safe is 2 :
-		say "The safe seems to have a second security measurement, a fingerprint reader.";
+		say "The safe seems to have a second security measure: a fingerprint reader.";
 	otherwise:
 		say "The safe seems locked.";
 
@@ -186,21 +186,21 @@ Instead of unlocking Safe with master key:
 	if player is carrying the Master key:
 		if status of Safe is 1:
 			now status of Safe is 2;
-			say "You've unlocked the Safe, but it seems to have another security measurement.";
+			say "You've unlocked the Safe, but it seems to have another security measure.";
 		otherwise:
-			say "The safe seems to have a second security measurement, a fingerprint reader.";
+			say "The safe seems to have a second security measure: a fingerprint reader.";
 	otherwise if status of Safe is 1:
 		say "The safe seems locked.";
 	otherwise if status of Safe is 2:
-		say "The safe seems to have a second security measurement, a fingerprint reader.";
+		say "The safe seems to have a second security measure: a fingerprint reader.";
 	otherwise:
 		say "The safe is open";
 		
 Instead of taking Antidote:
 	if status of Safe is less than 3:
-		say "you can't see the antidote.";
+		say "You can't see the antidote.";
 	otherwise:
-		say "You took the antidote, led to responsible officials and saved mankind.";
+		say "You took the antidote, handled it to responsible officers and saved the mankind.";
 		end the story finally;
 
 Instead of opening Hall door 1:
@@ -210,7 +210,7 @@ Instead of opening Hall door 1:
 		continue the action
 		
 Instead of taking the Gun:
-	say "you took Charles Babbage's gun";
+	say "You took Charles Babbage's gun";
 	now player carries the Gun;
 
 Instead of attacking the zombie 1 with the Ax:
@@ -292,11 +292,11 @@ Chapter 7 Conversation
 
 Instead of talking to Charles Babbage:say "He does not respond, he seems to be dead.".
 
-Instead of talking to Ada Lovelace:say "'Are you alright? Was it bitten? Do you know where the cure is? ' you say flustered.[paragraph break]'Im fine, you can rest easy,' she responds.[paragraph break] 'And I know where the cure is' she says with a beautiful smile on her face .".
+Instead of talking to Ada Lovelace:say "'Are you alright? Were you bitten? Do you know where the antidote is? ' you say, flustered.[paragraph break]'I'm fine. You can rest easy,' she responds.[paragraph break] 'And I know where the antidote is' she says with a beautiful smile on her face .".
 
 
 Instead of asking Ada Lovelace about " the cure":
-say "'The cure is in the laboratory in a closed chamber' [paragraph break] 'To access it you need a master key that is with the director of FioCruz's and then you need my digital' she informs"
+say "'The antidote is in the laboratory in a locked safe' [paragraph break] 'To access it you need a master key that is with the director of FioCruz and then you'll need my fingerprint' she says to him"
 	
 Instead of carrying Ada Lovelace: 	
 	move Ada Lovelace to the Lab; 	
