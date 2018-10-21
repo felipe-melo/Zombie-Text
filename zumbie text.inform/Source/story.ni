@@ -37,7 +37,7 @@ Player is in Porch.
 
 Ada Lovelace is a woman in the Refectory. The description is "Ada description".
 
-Charles Babbage is man in the Rest room. Charles Babbage carries the Gun, the Wallet, the Note, and Master key. "You can see a man lying on the floor, he seems to be dead, apparently he shot himself in the head with a gun". Understand "man", "the man", "the guy", "dead man" as Charles Babbage. The description is "The man has a gun in his right hand, some kind of master key and a wallet in his pocket and a note in his left hand". 
+Charles Babbage is man in the Rest room. Charles Babbage carries the Gun, the Wallet, the Note, and Master key. "You can see a man lying on the floor. He seems to be dead, apparently he shot himself in the head with a gun". Understand "man", "the man", "the guy", "dead man" as Charles Babbage. The description is "The man has a gun in his right hand, some kind of special key and a wallet in his pocket and a note in his left hand". 
 
 Zombie 1 is a man in the Entry Hall. "". The  description is "". Understand "dead", "living dead", "undead", "zombie", and "walking dead" as zombie.
 Zombie 1 has a number called is-alive. is-alive of the Zombie 1 is usually 1.
@@ -64,10 +64,10 @@ Wallet is a container.
 Red key is a thing. Blue key is a thing. Yellow key is a thing. Green key is a thing.
 Red key, Blue key, Yellow key, Green key are in Cabinet.
 
-Master Key is a thing.
+Master Key is a thing. Understand "special key" as Master Key. The description is "It's written: 'Master Key'".
 
 Gun is a thing. The description is "There is no bullets".
-Gun has a number called has-bullet. has-bullet of the Gun is usually 1.
+Gun has a number called has-bullet. has-bullet of the Gun is usually 0.
 
 Definition: The gun is empty if his has-bullet is less than 1.
 
@@ -100,13 +100,23 @@ Instead of taking the Note:
 	Now player carries the note;
 
 Instead of taking the Wallet:
-	say "You took the note from the dead man's body"; 	
+	say "You took the wallet from the dead man's body"; 	
 	Now player carries the wallet;
+
+Instead of taking the Badge:
+	say "You took the badge from the wallet"; 	
+	Now player carries the badge;
+	
+Instead of taking the Master Key:
+	say "You took the Master Key from the dead man's body"; 	
+	Now player carries the badge;
 	
 Instead of examining the Wallet:
 	say "There is blood all over it. Was he bitten by a zombie?
 
 	There is a badge in the wallet";
+	
+
 
 Instead of attacking the zombie 1:
 	say "You have to attack the zombie with something.".
