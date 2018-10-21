@@ -108,7 +108,7 @@ Instead of talking to Ada Lovelace:say "'Are you alright? Was it bitten? Do you 
 
 
 Instead of asking Ada Lovelace about " the cure":
-say "''The cure is in the laboratory in a closed chamber' [paragraph break] 'To access it you need a master key that is with the director of FioCruz's and then you need my digital' she informs"
+say "'The cure is in the laboratory in a closed chamber' [paragraph break] 'To access it you need a master key that is with the director of FioCruz's and then you need my digital' she informs"
 
 
 Stalker is a scene. 
@@ -117,7 +117,6 @@ Stalker ends when player in Lab.
 
 Every turn when Stalker is happening:
 	if the location of Ada Lovelace is not the location of the player:
-		say "kk";
 		let the way be the best route from the location of Ada Lovelace to the location of the player;
 		try Ada Lovelace going the way;
 	otherwise:
