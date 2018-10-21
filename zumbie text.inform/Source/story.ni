@@ -21,7 +21,7 @@ Lab door is a door. It is north of Entry Hall and south of Lab. Lab door is clos
 Hall door 2 is a door. It is north of Lab and south of Back Hall. Hall door 2 is closed.
 Refectory door is a door. It is east of Back Hall and west of Refectory. Refectory door is closed and locked.
 
-The matching key of the Hall door 1 is The Crowbar.
+The matching key of the Hall door 1 is The Ax.
 The matching key of the Rest door is Green key.
 The matching key of the Refectory door is Red key.
 
@@ -54,8 +54,8 @@ Definition: The zombie 3 is dead if his 3-is-alive is less than 1.
 
 Chapter 3 Things
 
-Crowbar is a thing.
-The Crowbar is in the Reception.
+Ax is a thing.
+The Ax is in the Reception.
 
 Cabinet is a container in the Reception.
 
@@ -72,7 +72,7 @@ Gun has a number called has-bullet. has-bullet of the Gun is usually 0.
 Definition: The gun is empty if his has-bullet is less than 1.
 
 Safe is a container in the Lab. "You see a big strong safe, that seems to be locked". The description is "". The Safe has a number called status.
-status of Safe is usually 1. 
+status of Safe is usually 1.
 
 Antidote is a thing. Antidote is in Safe.
 
@@ -80,7 +80,7 @@ Badge is a thing. The description is "Charles Babbage. FioCruz's Director".
 
 the Badge is in the Wallet.
 
-Note is a thing. The description is "There is something wrote with a trembling letter: 'Sorry for all the things I did, Amanda. With love, Charles Babbage'"
+Note is a thing. The description is "There is something wrote with a trembling letter: 'Sorry for all the things I did, Amanda. With love, Charles Babbage'".
 
 Chapter 4 Actions
 
@@ -90,6 +90,12 @@ Check attacking it with:
 	if the second noun is not carried by the player:
 		say "You're not holding [the second noun]." instead.
 		
+Opening it with is an action applying to two things. Understand "open [something] with [something]" as opening it with.
+
+Check opening it with:
+	if the second noun is not carried by the player:
+		say "You're not holding [the second noun]." instead.
+
 Chapter 5 Rules
 
 Instead of taking the Gun: say "You took the gun from the dead man's body";
@@ -109,7 +115,7 @@ Instead of taking the Badge:
 	
 Instead of taking the Master Key:
 	say "You took the Master Key from the dead man's body"; 	
-	Now player carries the badge;
+	Now player carries the Master key;
 	
 Instead of examining the Wallet:
 	say "There is blood all over it. Was he bitten by a zombie?
@@ -121,8 +127,17 @@ Instead of examining the Wallet:
 Instead of attacking the zombie 1:
 	say "You have to attack the zombie with something.".
 
-Instead of opening safe:
-	if status of Safe is 1:
+Instead of unlocking Safe with master key:
+	if player is carrying the Master key:
+		if status of Safe is 1:
+			now status of Safe is 2;
+			say "You've unlocked the Safe, but it seems to have another security measurement.";
+		otherwise if status of Safe is 2 and Ada is in the Lab:
+			now status of Safe is 3;
+			say "Ada opens the Safe with her fingerprint. The Safe is now open and you can see the antidote inside it.";
+		otherwise:
+			say "The safe seems to have a second security measurement, a fingerprint reader.";
+	otherwise if status of Safe is 1:
 		say "The safe seems locked.";
 	otherwise if status of Safe is 2:
 		say "The safe seems to have a second security measurement, a fingerprint reader.";
@@ -145,13 +160,13 @@ Instead of taking the Gun:
 	say "you took Charles Babbage's gun";
 	now player carries the Gun;
 
-Instead of attacking the zombie 1 with the crowbar:
+Instead of attacking the zombie 1 with the Ax:
 	let X be a random number from 1 to 5;
 	if X is 1 or X is 2:
-		say "You hit the zombie with the crowbar right in the head. The crowbar gets stuck in the head of the zombie!";
+		say "You hit the zombie with the ax right in the head. The ax gets stuck in the head of the zombie!";
 		now is-alive of zombie 1 is 0;
 		remove the zombie 1 from play;
-		now the crowbar is in the location;
+		now the Ax is in the location;
 	otherwise if X is 3:
 		say "You were not fast enough and the zombie attacks you.";
 		end the story finally;
@@ -160,7 +175,7 @@ Instead of attacking the zombie 1 with the crowbar:
 
 [***Mecânicas do Zumbi 2***]
 [Jogador morre caso ataque o zumbi com o pé de cabra ao invés da arma.]
-Instead of attacking the zombie 2 with the crowbar:
+Instead of attacking the zombie 2 with the Ax:
 	if Zombie 3 is not dead:
 		say "Zombie 3 just attacked you from behind.";
 		end the story finally;
@@ -186,7 +201,7 @@ Instead of attacking the zombie 2 with the gun:
 
 [***Mecânicas do Zumbi 3***]
 [Jogador morre caso ataque o zumbi com o pé de cabra ao invés da arma.]
-Instead of attacking the zombie 3 with the crowbar:
+Instead of attacking the zombie 3 with the Ax:
 	if Zombie 2 is not dead:
 		say "Zombie 2 just attacked you from behind.";
 		end the story finally;
