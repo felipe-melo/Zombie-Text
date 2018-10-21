@@ -90,6 +90,8 @@ Check attacking it with:
 	if the second noun is not carried by the player:
 		say "You're not holding [the second noun]." instead.
 		
+Carrying is an action applying to one thing. Understand "carry [someone]" as carrying.
+		
 Chapter 5 Rules
 
 Instead of taking the Gun: say "You took the gun from the dead man's body";
@@ -233,22 +235,7 @@ Instead of talking to Ada Lovelace:say "'Are you alright? Was it bitten? Do you 
 
 Instead of asking Ada Lovelace about " the cure":
 say "'The cure is in the laboratory in a closed chamber' [paragraph break] 'To access it you need a master key that is with the director of FioCruz's and then you need my digital' she informs"
-
-
-Stalker is a scene. 
-Stalker begins when the player in Refectory. 
-Stalker ends when player in Lab.
-
-Every turn when Stalker is happening:
-	if the location of Ada Lovelace is not the location of the player:
-		let the way be the best route from the location of Ada Lovelace to the location of the player;
-		try Ada Lovelace going the way;
-	otherwise:
-		say "'Hey, I'm bored,' Ada Lovelace says."
-
-[Every turn:
-	if the location of Ada Lovelace is not the location of the player:
-		let the way be the best route from the location of Ada Lovelace to the location of the player;
-		try Ada Lovelace going the way;]
-	[otherwise:
-		say "'Hey, I'm bored,' Ada Lovelace says. 'Let's go for a ramble.'"]
+	
+Instead of carrying Ada Lovelace: 	
+	move Ada Lovelace to the Lab; 	
+	move player to the Lab;
