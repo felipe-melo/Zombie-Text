@@ -66,13 +66,14 @@ Locker is a container in the Rest Room. Locker is closed and locked.
 Bullet is a thing. Bullet is in Locker.
 
 Wallet is a container.
+Wallet has a number called checked. checked of the Wallet is usually 0.
 
 Red key is a thing. Blue key is a thing. Yellow key is a thing. Green key is a thing.
 Red key, Blue key, Yellow key, Green key are in Cabinet.
 
 Master Key is a thing. Understand "special key" as Master Key. The description is "It's written: 'Master Key'".
 
-Gun is a thing. The description is "It's written: 'Desert Eagle Naga'. There is [has-bullet] bullets".
+Gun is a thing.
 Gun has a number called has-bullet. has-bullet of the Gun is usually 0.
 
 Definition: The gun is empty if his has-bullet is less than 1.
@@ -96,12 +97,6 @@ Check attacking it with:
 	if the second noun is not carried by the player:
 		say "You're not holding [the second noun]." instead.
 		
-Opening it with is an action applying to two things.
-
-Check opening it with:
-	if the second noun is not carried by the player:
-		say "You're not holding [the second noun]." instead.
-		
 Chapter 5 Rules
 
 Instead of taking the Gun: say "You took the gun from the dead man's body";
@@ -115,9 +110,18 @@ Instead of taking the Wallet:
 	say "You took the wallet from the dead man's body"; 	
 	Now player carries the wallet;
 
+Instead of examining the Gun:
+	if has-bullet of the gun is 0:
+		say "It's written: 'Desert Eagle Naga'. There is no bullets in it.";
+	otherwise:
+		say "It's written: 'Desert Eagle Naga'. It's charged with one bullet.";
+
 Instead of taking the Badge:
-	say "You took the badge from the wallet";
-	Now player carries the badge;
+	if checked of the Wallet is 0:
+		say "You can't see any such thing.";
+	otherwise:
+		say "You took the badge from the wallet";
+		Now player carries the badge;
 	
 Instead of taking the Master Key:
 	say "You took the Master Key from the dead man's body"; 	
@@ -127,13 +131,21 @@ Instead of examining the Wallet:
 	say "There is blood all over it. Was he bitten by a zombie?
 
 	There is a badge in the wallet";
+	now checked of the Wallet is 1;
 	
 Before opening the Locker:
 	say "Opening Charles Babbage's Locker";
 	
-After opening the Locker with something:
-	say "The Locker is unlocked but still closed";
-	now the Locker is unlocked;
+Instead unlocking the Locker with badge:
+	if the player is not carrying the badge:
+		say "You need some kind of card to open it.";
+	otherwise:
+		say "You open Charles Babbage's Locker. It's kinda messy! There is a bullet under the mess.";
+		now Locker is open;
+	
+Instead of taking the bullet:
+	now has-bullet of the Gun is 1;
+	say "You put the bullet in the gun and now it's charged";
 
 Instead of attacking the zombie 1:
 	say "You have to attack the zombie with something.".
@@ -175,9 +187,7 @@ Instead of attacking the zombie 1 with the crowbar:
 	otherwise:
 		say "You missed the blow but still managed to pull away to try again."
 		
-Instead of taking the bullet:
-	now has-bullet of the Gun is 1;
-	say "You put the bullet in the gun and now it's charged";
+
 
 [***Mecânicas do Zumbi 2***]
 [Jogador morre caso ataque o zumbi com o pé de cabra ao invés da arma.]
