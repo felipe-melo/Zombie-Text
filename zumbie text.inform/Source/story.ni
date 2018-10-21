@@ -60,7 +60,8 @@ The Crowbar is in the Reception.
 Cabinet is a container in the Reception.
 
 Locker is a container in the Rest Room. Locker is closed and locked. 
-	The description is "The lockers of all employees. They seem to be digital lockers.".
+	Locker has a number called nameDiscovered. nameDiscovered of the Locker is usually 0.
+	The description is "The lockers of all employees. They seem to be digital lockers that opens with some kind of card.".
 	The matching key of the Locker is Badge.
 
 Bullet is a thing. Bullet is in Locker.
@@ -83,7 +84,7 @@ status of Safe is usually 1.
 
 Antidote is a thing. Antidote is in Safe.
 
-Badge is a thing. The description is "Charles Babbage. FioCruz's Director".
+Badge is a thing. The description is "It's written: 'Charles Babbage. FioCruz's Director'. Looks like a kind of card.". Understand "card" as badge.
 
 the Badge is in the Wallet.
 
@@ -103,9 +104,13 @@ Instead of taking the Gun: say "You took the gun from the dead man's body";
 	Now player carries the gun;
 
 Instead of taking the Note:
-	say "You took the note from the dead man's body"; 	
+	say "You took the note from the dead man's body"; 
 	Now player carries the note;
-
+	
+Instead of examining the Note:
+	say "There is something wrote with a trembling letter: 'Sorry for all the things I did, Amanda. With love, Charles Babbage'";
+	now nameDiscovered of the Locker is 1;
+	
 Instead of taking the Wallet:
 	say "You took the wallet from the dead man's body"; 	
 	Now player carries the wallet;
@@ -120,6 +125,8 @@ Instead of taking the Badge:
 	if checked of the Wallet is 0:
 		say "You can't see any such thing.";
 	otherwise:
+		try examining the Badge;
+		now nameDiscovered of the Locker is 1;
 		say "You took the badge from the wallet";
 		Now player carries the badge;
 	
@@ -128,20 +135,29 @@ Instead of taking the Master Key:
 	Now player carries the Master Key;
 	
 Instead of examining the Wallet:
-	say "There is blood all over it. Was he bitten by a zombie?
+	say "'There is blood all over it. Was he bitten by a zombie?'
 
 	There is a badge in the wallet";
 	now checked of the Wallet is 1;
 	
 Before opening the Locker:
-	say "Opening Charles Babbage's Locker";
+	if nameDiscovered of the Locker is 0:
+		try examining Locker;
+		say "'So many Lockers. Which one do I try to open?'";
+	otherwise:
+		try examining Locker;
+		say "Opening Charles Babbage's Locker";
+	
 	
 Instead unlocking the Locker with badge:
-	if the player is not carrying the badge:
-		say "You need some kind of card to open it.";
-	otherwise:
+	if nameDiscovered of the Locker is 0:
+		say "'So many Lockers. Which one do I try to open?'";
+	otherwise if player is carrying the badge:
 		say "You open Charles Babbage's Locker. It's kinda messy! There is a bullet under the mess.";
-		now Locker is open;
+		now Locker is open;	
+	otherwise:
+		say "You need some kind of card to open it.";
+		
 	
 Instead of taking the bullet:
 	now has-bullet of the Gun is 1;
