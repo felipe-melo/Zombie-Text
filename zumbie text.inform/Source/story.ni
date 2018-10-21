@@ -66,32 +66,36 @@ the Badge is in the Wallet.
 
 Note is a thing. The description is "There is something wrote with a trembling letter: 'Sorry for all the things I did, Amanda. With love, Charles Babbage'"
 
-Instead of taking the Gun: say "You took the gun from the dead man's body";
-	Now player carries the gun;
+Chapter 4 Actions
 
-<<<<<<< develop
-Safe is a container in the Lab. "You see a big strong safe, that seems to be locked". The description is "". The Safe has a number called status.
-status of Safe is usually 1. 
-
-Antidote is a thing. Antidote is in Safe.
-
-=======
-Instead of taking the Note: say "You took the note from the dead man's body"; 	
-	Now player carries the note;
-
-Instead of taking the Wallet: say "You took the note from the dead man's body"; 	
-	Now player carries the wallet;
-	
-Instead of examining the Wallet: say "There is blood all over it. Was he bitten by a zombie?
-
-	There is a badge in the wallet";
-	
->>>>>>> Alter the items with director
 Attacking it with is an action applying to two things. Understand "attack [something] with [something]" and "hit [something] with [something]" as attacking it with.
 
 Check attacking it with:
 	if the second noun is not carried by the player:
 		say "You're not holding [the second noun]." instead.
+		
+Chapter 5 Rules
+
+Instead of taking the Gun: say "You took the gun from the dead man's body";
+	Now player carries the gun;
+
+Safe is a container in the Lab. "You see a big strong safe, that seems to be locked". The description is "". The Safe has a number called status.
+status of Safe is usually 1. 
+
+Antidote is a thing. Antidote is in Safe.
+
+Instead of taking the Note:
+	say "You took the note from the dead man's body"; 	
+	Now player carries the note;
+
+Instead of taking the Wallet:
+	say "You took the note from the dead man's body"; 	
+	Now player carries the wallet;
+	
+Instead of examining the Wallet:
+	say "There is blood all over it. Was he bitten by a zombie?
+
+	There is a badge in the wallet";
 
 Instead of attacking the zombie 1:
 	say "You have to attack the zombie with something.".
@@ -127,17 +131,13 @@ Instead of attacking the zombie 1 with the crowbar:
 		now is-alive of zombie 1 is 0;
 		remove the zombie 1 from play;
 		now the crowbar is in the location;
-<<<<<<< develop
 	otherwise if X is 3:
-=======
-	[otherwise if X is 3:
->>>>>>> Alter the items with director
 		say "You were not fast enough and the zombie attacks you.";
-		end the story finally;]
+		end the story finally;
 	otherwise:
 		say "You missed the blow but still managed to pull away to try again."
 
-Chapter 4 What Happens when entering
+Chapter 6 What Happens when entering
 
 Being Outside the Hospital is a Scene. 
 Being Outside the Hospital begins when play begins.
@@ -146,7 +146,7 @@ Being Outside the Hospital ends when player is in Reception.
 When play begins, say "introduction to be written"
 
 
-Chapter 5 Conversation
+Chapter 7 Conversation
 
 Talking to is an action applying to one visible thing.
 Understand "talk to [someone]" or “converse with [someone]” as talking to.
