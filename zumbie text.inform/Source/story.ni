@@ -90,6 +90,11 @@ Check attacking it with:
 	if the second noun is not carried by the player:
 		say "You're not holding [the second noun]." instead.
 		
+Talking to is an action applying to one visible thing. Understand "talk to [someone]" or “converse with [someone]” as talking to.
+
+Check talking to: 
+	say "[The noun] doesn't reply."
+		
 Carrying is an action applying to one thing. Understand "carry [someone]" as carrying.
 		
 Chapter 5 Rules
@@ -222,11 +227,6 @@ When play begins, say "introduction to be written"
 
 
 Chapter 7 Conversation
-
-Talking to is an action applying to one visible thing.
-Understand "talk to [someone]" or “converse with [someone]” as talking to.
-
-Check talking to: say "[The noun] doesn't reply."
 
 Instead of talking to Charles Babbage:say "He does not respond, he seems to be dead.".
 
