@@ -1,4 +1,4 @@
-"zumbi text" by "Felipe Melo"
+"zombie text" by "Felipe Melo, Herbert Salazar, Thiago Damasceno e Rodolpho Rosa"
 
 Use American dialect, full-length room descriptions, and the serial comma.
 
@@ -37,7 +37,7 @@ Player is in Porch.
 
 Ada Lovelace is a woman in the Refectory. The description is "Ada description".
 
-Charles Babbage is man in the Rest room. Charles Babbage carries the Gun and Master key. "You can see a man lying in the floor, his name is Charles Babbage, he seems to be dead, in his badge says that he was FioCruz's director, apparently he shot himself in the head with a gun because he was bitten by a zombie". The description is "Charles Babbage is carrying a gun and a key". 
+Charles Babbage is man in the Rest room. Charles Babbage carries the Gun, the Wallet, the Note, and Master key. "You can see a man lying on the floor, he seems to be dead, apparently he shot himself in the head with a gun". Understand "man", "the man", "the guy", "dead man" as Charles Babbage. The description is "The man has a gun in his right hand, some kind of master key and a wallet in his pocket and a note in his left hand". 
 
 Zombie 1 is a man in the Entry Hall. "". The  description is "". Understand "dead", "living dead", "undead", "zombie", and "walking dead" as zombie.
 Zombie 1 has a number called is-alive. is-alive of the Zombie 1 is usually 1.
@@ -59,15 +59,30 @@ The Crowbar is in the Reception.
 
 Cabinet is a container in the Reception.
 
+Wallet is a container.
+
 Red key is a thing. Blue key is a thing. Yellow key is a thing. Green key is a thing.
 Red key, Blue key, Yellow key, Green key are in Cabinet.
 
 Master Key is a thing.
 
-Gun is a thing.
+Gun is a thing. The description is "There is no bullets".
 Gun has a number called has-bullet. has-bullet of the Gun is usually 1.
 
 Definition: The gun is empty if his has-bullet is less than 1.
+
+Safe is a container in the Lab. "You see a big strong safe, that seems to be locked". The description is "". The Safe has a number called status.
+status of Safe is usually 1. 
+
+Antidote is a thing. Antidote is in Safe.
+
+Badge is a thing. The description is "Charles Babbage. FioCruz's Director".
+
+the Badge is in the Wallet.
+
+Note is a thing. The description is "There is something wrote with a trembling letter: 'Sorry for all the things I did, Amanda. With love, Charles Babbage'"
+
+Chapter 4 Actions
 
 Attacking it with is an action applying to two things. Understand "attack [something] with [something]" and "hit [something] with [something]" as attacking it with.
 
@@ -75,27 +90,59 @@ Check attacking it with:
 	if the second noun is not carried by the player:
 		say "You're not holding [the second noun]." instead.
 		
-Instead of taking the Gun:
-	say "You took the gun from Charles Babbage's";
-	now player carries the Gun;
+Chapter 5 Rules
+
+Instead of taking the Gun: say "You took the gun from the dead man's body";
+	Now player carries the gun;
+
+Instead of taking the Note:
+	say "You took the note from the dead man's body"; 	
+	Now player carries the note;
+
+Instead of taking the Wallet:
+	say "You took the note from the dead man's body"; 	
+	Now player carries the wallet;
+	
+Instead of examining the Wallet:
+	say "There is blood all over it. Was he bitten by a zombie?
+
+	There is a badge in the wallet";
 
 Instead of attacking the zombie 1:
 	say "You have to attack the zombie with something.".
-	
+
+Instead of opening safe:
+	if status of Safe is 1:
+		say "The safe seems locked.";
+	otherwise if status of Safe is 2:
+		say "The safe seems to have a second security measurement, a fingerprint reader.";
+	otherwise:
+		say "The safe is open";
+		
+Instead of taking Antidote:
+	if status of safe less than 3:
+		say "you can't see the antidote";
+	otherwise:
+		continue the action;
+
 Instead of opening Hall door 1:
 	if Hall door 1 is locked:
 		say "The Hall door 1 is locked by a chain.";
 	otherwise:
 		continue the action
+		
+Instead of taking the Gun:
+	say "you took Charles Babbage's gun";
+	now player carries the Gun;
 
 Instead of attacking the zombie 1 with the crowbar:
 	let X be a random number from 1 to 5;
-	if X is 1:
+	if X is 1 or X is 2:
 		say "You hit the zombie with the crowbar right in the head. The crowbar gets stuck in the head of the zombie!";
-		now is-alive is 0;
+		now is-alive of zombie 1 is 0;
 		remove the zombie 1 from play;
 		now the crowbar is in the location;
-	otherwise if X is 2:
+	otherwise if X is 3:
 		say "You were not fast enough and the zombie attacks you.";
 		end the story finally;
 	otherwise:
@@ -153,10 +200,45 @@ Instead of attacking the zombie 3 with the gun:
 		say "You missed the shot and now you're out of bullets. The zombies attack you.";
 		end the story finally;
 
-Chapter 4 What Happens when entering
+Chapter 6 What Happens when entering
 
 Being Outside the Hospital is a Scene. 
 Being Outside the Hospital begins when play begins.
 Being Outside the Hospital ends when player is in Reception.
 
 When play begins, say "introduction to be written"
+
+
+Chapter 7 Conversation
+
+Talking to is an action applying to one visible thing.
+Understand "talk to [someone]" or “converse with [someone]” as talking to.
+
+Check talking to: say "[The noun] doesn't reply."
+
+Instead of talking to Charles Babbage:say "He does not respond, he seems to be dead.".
+
+Instead of talking to Ada Lovelace:say "'Are you alright? Was it bitten? Do you know where the cure is? ' you say flustered.[paragraph break]'Im fine, you can rest easy,' she responds.[paragraph break] 'And I know where the cure is' she says with a beautiful smile on her face .".
+
+
+Instead of asking Ada Lovelace about " the cure":
+say "'The cure is in the laboratory in a closed chamber' [paragraph break] 'To access it you need a master key that is with the director of FioCruz's and then you need my digital' she informs"
+
+
+Stalker is a scene. 
+Stalker begins when the player in Refectory. 
+Stalker ends when player in Lab.
+
+Every turn when Stalker is happening:
+	if the location of Ada Lovelace is not the location of the player:
+		let the way be the best route from the location of Ada Lovelace to the location of the player;
+		try Ada Lovelace going the way;
+	otherwise:
+		say "'Hey, I'm bored,' Ada Lovelace says."
+
+[Every turn:
+	if the location of Ada Lovelace is not the location of the player:
+		let the way be the best route from the location of Ada Lovelace to the location of the player;
+		try Ada Lovelace going the way;]
+	[otherwise:
+		say "'Hey, I'm bored,' Ada Lovelace says. 'Let's go for a ramble.'"]
