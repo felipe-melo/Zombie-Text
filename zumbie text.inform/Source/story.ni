@@ -147,6 +147,8 @@ Instead of examining the Wallet:
 Instead unlocking the Locker with badge:
 	if nameDiscovered of the Locker is 0:
 		say "'So many Lockers. Which one do I try to open?'";
+	otherwise if Locker is open:
+		say "You have already opened the Locker.";
 	otherwise if player is carrying the badge:
 		say "You open Charles Babbage's Locker. It's kinda messy! There is a bullet under the mess.";
 		now Locker is open;	
