@@ -97,7 +97,7 @@ Talking to is an action applying to one visible thing. Understand "talk to [some
 Check talking to: 
 	say "[The noun] doesn't reply."
 		
-Carrying is an action applying to one thing. Understand "carry [someone]" as carrying.
+Following is an action applying to one thing. Understand "follow [someone]" as following.
 		
 Chapter 5 Rules
 
@@ -326,8 +326,8 @@ Instead of talking to Ada Lovelace:
 		Ada: 'Don't worry about that, the antidote is here and safe.'".
 
 Instead of asking Ada Lovelace about " the antidote":
-	say "Ada: 'The antidote is in the laboratory in a locked safe' [paragraph break] Ada: 'To access it you need a master key that is with the FioCruz's director and then you'll need my fingerprint'".
+	say "Ada: 'The antidote is in the laboratory in a locked safe' [paragraph break] Ada: 'To access it you need a master key that is with the FioCruz's director and then you'll need my fingerprint'[paragraph break]Ada: 'Follow me''".
 
-Instead of carrying Ada Lovelace:
+Instead of following Ada Lovelace:
 	move Ada Lovelace to the Laboratory; 	
 	move player to the Laboratory;
