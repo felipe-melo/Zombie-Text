@@ -29,17 +29,17 @@ Chapter 2 Characters
 
 Player is in Porch.
 
-Ada Lovelace is a woman in the Refectory. The description is "Ada is a woman with long black hair and about forty years old and with an air of wisdom".
+Ada Lovelace is a woman in the Refectory. "You see a beautiful woman with a coat, when she turns you can see her name on it, Ada Lovelace.". The description is "Ada is a woman with long black hair and about forty years old and with an air of wisdom".
 
 Charles Babbage is man in the Rest room. Charles Babbage carries the Gun, the Wallet, the Note, and Master key. "You can see a man lying on the floor. He seems to be dead. He apparently shot himself in the head with a gun". Understand "man", "the man", "the guy", "dead man" as Charles Babbage. The description is "The man has a gun in his right hand, some kind of special key, a wallet in his pocket and a note in his left hand". 
 
-Zombie 1 is a man in the Hallway. "Stand by the Rest door you see a living dead who was once probably an employee of that institution. On the outside he wears this gray skin and hungry eyes.". Understand "dead", "living dead", "undead", "zombie", and "walking dead" as zombie.
+Zombie 1 is a man in the Hallway. "Standing by the Rest door you see a living dead who was once probably an employee of that institution. On the outside he wears this gray skin and hungry eyes.". The description is "The zombie was once a man and now it's just a brute animal.". Understand "dead", "living dead", "undead", "zombie", and "walking dead" as zombie.
 Zombie 1 has a number called is-alive. is-alive of the Zombie 1 is usually 1.
 
-Zombie 2 is woman in the Hall. "". The description is "". Understand "dead", "living dead", "undead", "zombie" and "walking dead" as zombie.
+Zombie 2 is woman in the Hall. "Standing by the Refectory door you see one of the undead scratching the Refectory door, as he was hunting something or someone.". The description is "She is wearing a medical coat, but she far from the profession she used to be.". Understand "dead", "living dead", "undead", "zombie" and "walking dead" as zombie.
 Zombie 2 has a number called is-alive. is-alive of the Zombie 2 is usually 1.
 
-Zombie 3 is man in the Hall. "". The description is "". Understand "dead", "living dead", "undead", "zombie" and "walking dead" as zombie.
+Zombie 3 is man in the Hall. "There is another creature, a big man with the same hungry eye that they always have.". The description is "Just another live destroyed by this terrible prague.". Understand "dead", "living dead", "undead", "zombie" and "walking dead" as zombie.
 Zombie 3 has a number called is-alive. is-alive of the Zombie 3 is usually 1.
 
 Definition: The zombie 1 is dead if his is-alive is less than 1.
@@ -112,7 +112,7 @@ Instead of taking the Note:
 	
 Instead of examining the Note:
 	say "There is something written in a trembling handwriting:[paragraph break]
-		'I try to makes things right and i fail, i'm sorry Amanda. [paragraph break] With love, Charles Babbage'";
+		'I tried to makes things right and i failed, i'm sorry Amanda. [paragraph break] With love, Charles Babbage'";
 	now nameDiscovered of the Locker is 1;
 	
 Instead of taking the Wallet:
@@ -156,6 +156,11 @@ Instead unlocking the Locker with badge:
 Instead of taking the bullet:
 	now has-bullet of the Gun is 1;
 	say "You put the bullet in the gun and now it's charged";
+	remove bullet from play;
+	
+Instead of taking the Gun:
+	say "You took Charles Babbage's gun";
+	now player carries the Gun;
 
 section 5.2 thing's rules
 
@@ -281,10 +286,6 @@ Instead of opening Hall door:
 		say "The Hall door 1 is locked with a chain.";
 	otherwise:
 		continue the action
-
-Instead of taking the Gun:
-	say "You took Charles Babbage's gun";
-	now player carries the Gun;
 	
 instead of opening Rest door:
 	if the Zombie 1 is dead:
@@ -325,7 +326,7 @@ Instead of talking to Ada Lovelace:
 		you: 'I've been through hell to get here and i don't even know if the antidote is safe.' [paragraph break] 
 		Ada: 'Don't worry about that, the antidote is here and safe.'".
 
-Instead of asking Ada Lovelace about " the antidote":
+Instead of asking Ada Lovelace about "antidote":
 	say "Ada: 'The antidote is in the laboratory in a locked safe' [paragraph break] Ada: 'To access it you need a master key that is with the FioCruz's director and then you'll need my fingerprint'[paragraph break]Ada: 'Follow me''".
 
 Instead of following Ada Lovelace:
