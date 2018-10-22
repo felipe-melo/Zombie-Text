@@ -9,10 +9,10 @@ Section 1.1 The Build
 Porch is a room. "The porch of Fiocruz is calm, quite different from the horrors that our soldier left behind until he gets there, the breeze hits his face as he prepares to enter.".
 Reception is a room. "The reception is deserted, a deafening silence takes over the place.".
 Hallway is a room. "The hallway is large with high walls, which seem even larger with the silence and the absence of people.".
-Rest room is a room. "Rest room description".
+Rest room is a room. "The rest room is a large room with comfortable chairs, but blood stains, showing that it was no longer a safe and comfortable place like before.".
 Laboratory is a room. "The Laboratory is quite big, with lots of equipments and machines.". Understand "lab" as Laboratory. 
-Hall is a room. "Hall 2 description".
-Refectory is a room. "Refectory description.".
+Hall is a room. "The hall is long and with pictures of famous scientists who passed through the institution".
+Refectory is a room. "The refectory is a place with long tables surrounded by chairs".
 
 Main door is a door. It is north of Porch and south of Reception. Main door is closed.
 Hallway door is a door. It is north of Reception and south of Hallway. Hallway door is closed and locked.
@@ -29,7 +29,7 @@ Chapter 2 Characters
 
 Player is in Porch.
 
-Ada Lovelace is a woman in the Refectory. The description is "Ada description".
+Ada Lovelace is a woman in the Refectory. The description is "Ada is a woman with long black hair and about forty years old and with an air of wisdom".
 
 Charles Babbage is man in the Rest room. Charles Babbage carries the Gun, the Wallet, the Note, and Master key. "You can see a man lying on the floor. He seems to be dead. He apparently shot himself in the head with a gun". Understand "man", "the man", "the guy", "dead man" as Charles Babbage. The description is "The man has a gun in his right hand, some kind of special key, a wallet in his pocket and a note in his left hand". 
 
